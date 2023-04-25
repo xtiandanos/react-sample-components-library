@@ -26,6 +26,7 @@ generated-cra-app
 template
 
 package-lock.json
+package.json
 
 # storybook documentation
 docs
