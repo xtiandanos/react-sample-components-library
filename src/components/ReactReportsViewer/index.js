@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Select,
   Form,
@@ -15,6 +14,8 @@ export const getDataUrl = (blob) => {
   const file = new Blob([blob], { type: "application/pdf" });
   return URL.createObjectURL(file);
 };
+
+const React = require("react");
 
 export default function ReactReportsViewer({
   handleSubmit,
