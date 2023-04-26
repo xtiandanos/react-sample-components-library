@@ -28,9 +28,10 @@ export default function ReactReportsViewer({
   setInitialValues,
 }) {
   const [form] = Form.useForm();
+  const { Item } = Form;
   const displayReportNameDropdownList = (list) => {
     return (
-      <Form.Item label="Report Name :" name="reportName">
+      <Item label="Report Name :" name="reportName">
         <Select
           options={list.map((item) => ({
             value: item.value,
@@ -40,13 +41,13 @@ export default function ReactReportsViewer({
             setInitialValues(form.getFieldsValue());
           }}
         />
-      </Form.Item>
+      </Item>
     );
   };
 
   const displayRCCodeDropdownList = (list) => {
     return (
-      <Form.Item label="RC Code :" name="rCCode">
+      <Item label="RC Code :" name="rCCode">
         <Select
           options={list.map((item) => ({
             value: item.value,
@@ -56,13 +57,13 @@ export default function ReactReportsViewer({
             setInitialValues(form.getFieldsValue());
           }}
         />
-      </Form.Item>
+      </Item>
     );
   };
 
   const displayReportTypeDropdownList = (list) => {
     return (
-      <Form.Item label="Report Type :" name="reportType">
+      <Item label="Report Type :" name="reportType">
         <Select
           options={list.map((item) => ({
             value: item.referenceCode,
@@ -72,20 +73,20 @@ export default function ReactReportsViewer({
             setInitialValues(form.getFieldsValue());
           }}
         />
-      </Form.Item>
+      </Item>
     );
   };
 
   const displayReportDate = () => {
     return (
-      <Form.Item label="Date :" name="date">
+      <Item label="Date :" name="date">
         <DatePicker
           onChange={(_date, dateString) => {
             const fieldsValue = form.getFieldsValue();
             setInitialValues({ ...fieldsValue, date: dateString });
           }}
         />
-      </Form.Item>
+      </Item>
     );
   };
   return (
@@ -113,7 +114,7 @@ export default function ReactReportsViewer({
                   : null}
                 {rCCodeList ? displayRCCodeDropdownList(rCCodeList) : null}
                 {displayReportDate()}
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                <Item wrapperCol={{ offset: 8, span: 16 }}>
                   <Button
                     type="primary"
                     htmlType="submit"
@@ -127,7 +128,7 @@ export default function ReactReportsViewer({
                   >
                     Submit
                   </Button>
-                </Form.Item>
+                </Item>
               </Form>
             </section>
           )}
